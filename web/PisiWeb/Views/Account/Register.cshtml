@@ -8,6 +8,35 @@
     <h2>Create a new account.</h2>
 </hgroup>
 
+<div id="verification-form">
+    <h3>Enter your registration id</h3>
+    <input type="text" id="verification-id" />
+    <div><input id="submit-verificationid" type="button" value="Submit"/></div>
+</div>
+
+<div style="float: right; clear:both; display: none; margin-top: 0;" id="employee-info">
+    <ul style="list-style-type: none; margin-top: 0;">
+        <li>
+            <label>Employee Id</label>
+            <input type="text" readonly="readonly" id="employeeId" />
+        </li>
+        <li>
+            <label>Name</label>
+            <input type="text" readonly="readonly" id="empname" />
+        </li>
+        <li>
+            <label>Birth Date</label>
+            <input type="text" readonly="readonly" id="birthdate" />
+        </li>
+        <li>
+            <label>Birth Place</label>
+            <input type="text" readonly="readonly" id="birthplace" />
+        </li>
+    </ul>
+</div>
+
+<div id="register-form" style="display: none;">
+
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
@@ -27,15 +56,54 @@
                 @Html.LabelFor(m => m.ConfirmPassword)
                 @Html.PasswordFor(m => m.ConfirmPassword)
             </li>
-            <li>
-                @Html.LabelFor(m => m.EmployeeId)
-                @Html.TextBoxFor(m => m.EmployeeId)
-            </li>
         </ol>
         <input type="submit" value="Register" />
     </fieldset>
 }
 
+</div>
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        function showRegistrationForm(data) {
+            $("input#employeeId").val(data.EmployeeId);
+            $("input#empname").val(data.EmployeeName);
+            $("input#birthdate").val(data.BirthDate);
+            $("input#birthplace").val(data.BirthPlace);
+
+            $("#verification-form").hide();
+            $("#register-form").show();
+            $("#employee-info").show();
+        }
+
+        $(function () {
+            var xhr = null;
+            function submitVerificationId(e) {
+                var regId = $("input#verification-id").val();
+                if (xhr)
+                    xhr.abort();
+                xhr = $.ajax("/SignupVerification/VerifyRegistrationId", {
+                    type: 'post',
+                    dataType: 'json',
+                    data: { "regId": regId },
+                    complete: function () {
+                        xhr = null;
+                    },
+                    success: function (data) {
+                        if(data.success===false)
+                            alert("Registration failed: " + data.message);
+                        else
+                            showRegistrationForm(data);
+                    },
+                    error: function (xhr, error) {
+                        console.log(arguments);
+                        alert(error);
+                    }
+                });
+            }
+            $("input#submit-verificationid").click(submitVerificationId);
+        });
+    </script>
 }

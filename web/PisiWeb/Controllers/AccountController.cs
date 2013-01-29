@@ -11,7 +11,8 @@ using WebMatrix.WebData;
 using PisiWeb.Filters;
 using PisiWeb.Models;
 using System.ServiceModel;
-
+using Pisi.MasterData.Contract;
+using System.Collections;
 
 namespace PisiWeb.Controllers
 {
@@ -46,9 +47,7 @@ namespace PisiWeb.Controllers
             ModelState.AddModelError("", "The user name or password provided is incorrect.");
             return View(model);
         }
-
-       
-
+        
         //
         // POST: /Account/LogOff
 
@@ -83,7 +82,16 @@ namespace PisiWeb.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    VerificationEmployee ve = (VerificationEmployee)Session["UserProfile"];
+                    
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { 
+                        EmployeeId = ve.EmployeeId, 
+                        EmployeeName = ve.Name,
+                        Address = ve.Address,
+                        BirthDate = ve.BirthDate,
+                        BirthPlace = ve.BirthPlace
+                    });
+                    
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }

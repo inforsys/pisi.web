@@ -6,6 +6,9 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using PisiWeb.Models;
+using PisiWeb.App_Start;
 
 namespace PisiWeb
 {
@@ -23,6 +26,8 @@ namespace PisiWeb
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+
+            Database.SetInitializer<UsersContext>(new SecurityDBInitializer());
         }
     }
 }

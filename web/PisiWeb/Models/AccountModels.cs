@@ -26,6 +26,11 @@ namespace PisiWeb.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+        public string EmployeeId { get; set; }
+        public string EmployeeName { get; set; }
+        public string Address { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string BirthPlace { get; set; }
     }
 
     public class RegisterExternalLoginModel
@@ -88,11 +93,11 @@ namespace PisiWeb.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Required]
+        /*[Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Your EmployeeId")]
-        public string EmployeeId { get; set; }
+        public string EmployeeId { get; set; */
     }
 
     public class ExternalLogin
