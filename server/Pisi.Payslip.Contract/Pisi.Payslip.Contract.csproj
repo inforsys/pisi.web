@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{521A9E68-2EA4-4B69-B82D-6E6FC8285773}</ProjectGuid>
+    <ProjectGuid>{DCBCD1F2-42FD-4252-BFB3-8AD0F9CF0C56}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pisi.MasterData</RootNamespace>
-    <AssemblyName>Pisi.MasterData</AssemblyName>
+    <RootNamespace>Pisi.Payslip.Contract</RootNamespace>
+    <AssemblyName>Pisi.Payslip.Contract</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,14 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,25 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PeriodRepository.cs" />
+    <Compile Include="IPayslipService.cs" />
+    <Compile Include="Payroll.cs" />
+    <Compile Include="PayrollAllowance.cs" />
+    <Compile Include="PayrollDeduction.cs" />
+    <Compile Include="PayslipPeriod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VerificationRepository.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Pisi.DataModel\Pisi.DataModel.csproj">
-      <Project>{7DDFF740-6494-4138-8C73-2EF14E73BB34}</Project>
-      <Name>Pisi.DataModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Pisi.MasterData.Contract\Pisi.MasterData.Contract.csproj">
-      <Project>{562EAF99-9042-4A65-9384-D9D2237938C0}</Project>
-      <Name>Pisi.MasterData.Contract</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

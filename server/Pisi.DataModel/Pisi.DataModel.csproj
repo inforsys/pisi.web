@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{521A9E68-2EA4-4B69-B82D-6E6FC8285773}</ProjectGuid>
+    <ProjectGuid>{7DDFF740-6494-4138-8C73-2EF14E73BB34}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pisi.MasterData</RootNamespace>
-    <AssemblyName>Pisi.MasterData</AssemblyName>
+    <RootNamespace>Pisi.DataModel</RootNamespace>
+    <AssemblyName>Pisi.DataModel</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -38,7 +38,6 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,25 +45,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PeriodRepository.cs" />
+    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
+    <Compile Include="Models\Mapping\tblAllowanceMap.cs" />
+    <Compile Include="Models\Mapping\tblDeductionMap.cs" />
+    <Compile Include="Models\Mapping\tblEmployeeMap.cs" />
+    <Compile Include="Models\Mapping\tblMonthMap.cs" />
+    <Compile Include="Models\Mapping\tblPayAllowMap.cs" />
+    <Compile Include="Models\Mapping\tblPayDeduMap.cs" />
+    <Compile Include="Models\Mapping\tblPayrollMap.cs" />
+    <Compile Include="Models\Mapping\tblPeriodMap.cs" />
+    <Compile Include="Models\Mapping\tblUserVerificationMap.cs" />
+    <Compile Include="Models\pisidataContext.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\tblAllowance.cs" />
+    <Compile Include="Models\tblDeduction.cs" />
+    <Compile Include="Models\tblEmployee.cs" />
+    <Compile Include="Models\tblMonth.cs" />
+    <Compile Include="Models\tblPayAllow.cs" />
+    <Compile Include="Models\tblPayDedu.cs" />
+    <Compile Include="Models\tblPayroll.cs" />
+    <Compile Include="Models\tblPeriod.cs" />
+    <Compile Include="Models\tblUserVerification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VerificationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Pisi.DataModel\Pisi.DataModel.csproj">
-      <Project>{7DDFF740-6494-4138-8C73-2EF14E73BB34}</Project>
-      <Name>Pisi.DataModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Pisi.MasterData.Contract\Pisi.MasterData.Contract.csproj">
-      <Project>{562EAF99-9042-4A65-9384-D9D2237938C0}</Project>
-      <Name>Pisi.MasterData.Contract</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
