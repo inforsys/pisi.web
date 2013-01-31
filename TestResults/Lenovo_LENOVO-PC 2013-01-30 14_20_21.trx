@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="37af3ca8-53c1-4428-9a6e-9a748a869731" name="Lenovo@LENOVO-PC 2013-01-30 14:20:21" runUser="Lenovo-PC\Lenovo" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="b6e83313-da21-4c6c-842f-423321390c1d">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Lenovo_LENOVO-PC 2013-01-30 14_20_21">
+      <DeploymentItem filename="D:\belajar\pisi\pisi.web\Pisi.Payslip.Contract\bin\Debug\Pisi.Payslip.Contract.dll" />
+      <DeploymentItem filename="D:\belajar\pisi\pisi.web\Pisi.Payslip\bin\Debug\Pisi.Payslip.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-01-30T14:20:21.8117726+07:00" queuing="2013-01-30T14:20:21.8907771+07:00" start="2013-01-30T14:20:21.9147785+07:00" finish="2013-01-30T14:20:22.3128012+07:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="NullableValueTest" storage="d:\belajar\pisi\pisi.web\pisi.payslip.compnenttest\bin\debug\pisi.payslip.compnenttest.dll" id="4c024efa-fd1f-9a78-e93d-af7b14ff33cf">
+      <Execution id="0e64d911-3b56-4929-bb20-9cfdac4e0380" />
+      <TestMethod codeBase="D:/belajar/pisi/pisi.web/Pisi.Payslip.CompnentTest/bin/Debug/Pisi.Payslip.CompnentTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Pisi.Payslip.CompnentTest.PayslipDataLoaderTest, Pisi.Payslip.CompnentTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="NullableValueTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="4c024efa-fd1f-9a78-e93d-af7b14ff33cf" executionId="0e64d911-3b56-4929-bb20-9cfdac4e0380" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="0e64d911-3b56-4929-bb20-9cfdac4e0380" testId="4c024efa-fd1f-9a78-e93d-af7b14ff33cf" testName="NullableValueTest" computerName="LENOVO-PC" duration="00:00:00.0530928" startTime="2013-01-30T14:20:21.9317794+07:00" endTime="2013-01-30T14:20:22.2727990+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0e64d911-3b56-4929-bb20-9cfdac4e0380">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method Pisi.Payslip.CompnentTest.PayslipDataLoaderTest.NullableValueTest threw exception: 
+System.InvalidOperationException: Nullable object must have a value.</Message>
+          <StackTrace>    at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at System.Nullable`1.get_Value()
+   at Pisi.Payslip.CompnentTest.PayslipDataLoaderTest.NullableValueTest() in D:\belajar\pisi\pisi.web\Pisi.Payslip.CompnentTest\PayslipDataLoaderTest.cs:line 29
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

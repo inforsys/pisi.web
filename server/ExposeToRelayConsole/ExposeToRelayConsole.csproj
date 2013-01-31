@@ -64,13 +64,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Pisi.Payslip.Contract\Pisi.Payslip.Contract.csproj">
+      <Project>{DCBCD1F2-42FD-4252-BFB3-8AD0F9CF0C56}</Project>
+      <Name>Pisi.Payslip.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pisi.Payslip.Services\Pisi.Services.csproj">
+      <Project>{C9DFED31-67AA-436D-84F8-BFD062FDD76D}</Project>
+      <Name>Pisi.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pisi.MasterData.Contract\Pisi.MasterData.Contract.csproj">
       <Project>{562EAF99-9042-4A65-9384-D9D2237938C0}</Project>
       <Name>Pisi.MasterData.Contract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Pisi.MasterData.Services\Pisi.MasterData.Services.csproj">
-      <Project>{869591AA-E897-4E75-BA22-71FE80D3AB64}</Project>
-      <Name>Pisi.MasterData.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

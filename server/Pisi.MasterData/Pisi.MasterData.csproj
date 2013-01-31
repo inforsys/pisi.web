@@ -46,29 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
-    <Compile Include="Models\Mapping\tblEmployeeMap.cs" />
-    <Compile Include="Models\Mapping\tblMonthMap.cs" />
-    <Compile Include="Models\Mapping\tblPeriodMap.cs" />
-    <Compile Include="Models\Mapping\tblUserVerificationMap.cs" />
-    <Compile Include="Models\pisidataContext.cs" />
-    <Compile Include="Models\sysdiagram.cs" />
-    <Compile Include="Models\tblEmployee.cs" />
-    <Compile Include="Models\tblMonth.cs" />
-    <Compile Include="Models\tblPeriod.cs" />
-    <Compile Include="Models\tblUserVerification.cs" />
     <Compile Include="PeriodRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VerificationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Pisi.DataModel\Pisi.DataModel.csproj">
+      <Project>{7DDFF740-6494-4138-8C73-2EF14E73BB34}</Project>
+      <Name>Pisi.DataModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pisi.MasterData.Contract\Pisi.MasterData.Contract.csproj">
       <Project>{562EAF99-9042-4A65-9384-D9D2237938C0}</Project>
       <Name>Pisi.MasterData.Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

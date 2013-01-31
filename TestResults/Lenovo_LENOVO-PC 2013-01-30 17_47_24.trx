@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="97384543-a28d-4d6f-a244-3f515500ac98" name="Lenovo@LENOVO-PC 2013-01-30 17:47:24" runUser="Lenovo-PC\Lenovo" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="b6e83313-da21-4c6c-842f-423321390c1d">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Lenovo_LENOVO-PC 2013-01-30 17_47_24">
+      <DeploymentItem filename="D:\belajar\pisi\pisi.web\Pisi.Payslip.Contract\bin\Debug\Pisi.Payslip.Contract.dll" />
+      <DeploymentItem filename="D:\belajar\pisi\pisi.web\Pisi.Payslip\bin\Debug\Pisi.Payslip.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-01-30T17:47:24.3723024+07:00" queuing="2013-01-30T17:47:25.6693766+07:00" start="2013-01-30T17:47:25.8473868+07:00" finish="2013-01-30T17:47:39.6061737+07:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="LENOVO-PC" outcome="Error" timestamp="2013-01-30T17:47:39.6051737+07:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="LoadAllowanceForEmployeeInPeriod" storage="d:\belajar\pisi\pisi.web\pisi.payslip.compnenttest\bin\debug\pisi.payslip.compnenttest.dll" id="5b97c143-5b06-5338-9506-b5c1c6c23a2c">
+      <Execution id="e8e304f5-216b-4029-83ae-4f1b67d4bd33" />
+      <TestMethod codeBase="D:/belajar/pisi/pisi.web/Pisi.Payslip.CompnentTest/bin/Debug/Pisi.Payslip.CompnentTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Pisi.Payslip.CompnentTest.PayslipDataLoaderTest, Pisi.Payslip.CompnentTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadAllowanceForEmployeeInPeriod" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="5b97c143-5b06-5338-9506-b5c1c6c23a2c" executionId="e8e304f5-216b-4029-83ae-4f1b67d4bd33" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="e8e304f5-216b-4029-83ae-4f1b67d4bd33" testId="5b97c143-5b06-5338-9506-b5c1c6c23a2c" testName="LoadAllowanceForEmployeeInPeriod" computerName="LENOVO-PC" duration="00:00:13.6057782" startTime="2013-01-30T17:47:26.0003955+07:00" endTime="2013-01-30T17:47:39.6061737+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e8e304f5-216b-4029-83ae-4f1b67d4bd33">
+    </UnitTestResult>
+  </Results>
+</TestRun>

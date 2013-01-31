@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C9DFED31-67AA-436D-84F8-BFD062FDD76D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pisi.Services</RootNamespace>
+    <AssemblyName>Pisi.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PayrollPeriod.cs" />
+    <Compile Include="PayslipServices.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pisi.Payslip.Contract\Pisi.Payslip.Contract.csproj">
+      <Project>{DCBCD1F2-42FD-4252-BFB3-8AD0F9CF0C56}</Project>
+      <Name>Pisi.Payslip.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pisi.Payslip\Pisi.Payslip.csproj">
+      <Project>{F6B96C54-F03F-4876-B7C4-30769CCFCC17}</Project>
+      <Name>Pisi.Payslip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\server\Pisi.MasterData.Contract\Pisi.MasterData.Contract.csproj">
+      <Project>{562EAF99-9042-4A65-9384-D9D2237938C0}</Project>
+      <Name>Pisi.MasterData.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\server\Pisi.MasterData\Pisi.MasterData.csproj">
+      <Project>{521A9E68-2EA4-4B69-B82D-6E6FC8285773}</Project>
+      <Name>Pisi.MasterData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
