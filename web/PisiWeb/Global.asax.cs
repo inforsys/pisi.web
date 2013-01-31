@@ -28,6 +28,7 @@ namespace PisiWeb
             AuthConfig.RegisterAuth();
 
             Database.SetInitializer<UsersContext>(new SecurityDBInitializer());
+            
         }
     }
 }

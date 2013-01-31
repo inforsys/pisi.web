@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "PISI Web Edition";
+﻿@model IList<Pisi.MasterData.Contract.PayrollPeriod>
+@{
+    ViewBag.Title = "PAYSLIP";
 }
 @section featured {
     <section class="featured">
@@ -8,35 +9,57 @@
                 <h1>@ViewBag.Title.</h1>
                 <h2>@ViewBag.Message</h2>
             </hgroup>
-            <p>
-                To learn more about PISI visit
-                <a href="https://www.dokuku.com" title="Dokuku Website">https://www.dokuku.com</a>.
-            </p>
         </div>
     </section>
 }
-<!--<h3>We suggest the following:</h3>
-<ol class="round">
-    <li class="one">
-        <h5>Getting Started</h5>
-        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-        enables a clean separation of concerns and that gives you full control over markup
-        for enjoyable, agile development. ASP.NET MVC includes many features that enable
-        fast, TDD-friendly development for creating sophisticated applications that use
-        the latest web standards.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
-    </li>
+@section styles {
+    <link rel="Stylesheet" href="@Url.Content("~/Content/bootstrap.min.css")">
+    <style> 
+    body {
+        padding-top: 0; /* 60px to make the container go all the way to the bottom of the topbar */
+    }
+    ul.payslip-period-list 
+    {
+        list-style-type: none;
+    }
+    div.span3.payslip-period-box
+    {
+        border-right: 1px solid black;
+    }
+    </style>
+    <link rel="Stylesheet" href="@Url.Content("~/Content/bootstrap-responsive.min.css")">
+}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3 payslip-period-box">
+            <p>
+                <label>To preview payslip select period</label>
+                <ul class="payslip-period-list">
+                @foreach (Pisi.MasterData.Contract.PayrollPeriod payPrd in Model)
+                {
+                    <li><a href="#" id="@payPrd.Code" class="payslip-period-item">@payPrd.Name</a></li>
+                }
+                </ul>
+            </p>
+        </div>
+        <div class="span9 payslip-view">
+            
+        </div>
+    </div>
+</div>
 
-    <li class="two">
-        <h5>Add NuGet packages and jump-start your coding</h5>
-        NuGet makes it easy to install and update free libraries and tools.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
-    </li>
+@section scripts {
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/underscore.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/backbone.min.js")"></script>
+    <script type="text/javascript">
+    function showPayslip(e){
+        $("div.span9.payslip-view").empty();
+        $("div.span9.payslip-view").append("<h3>Your payslip period " + $(e.target).text() + "</h3>");
+    }
 
-    <li class="three">
-        <h5>Find Web Hosting</h5>
-        You can easily find a web hosting company that offers the right mix of features
-        and price for your applications.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
-    </li>
-</ol>-->
+    $(function(){
+        $('a.payslip-period-item').click(showPayslip);
+    });
+    </script>
+}

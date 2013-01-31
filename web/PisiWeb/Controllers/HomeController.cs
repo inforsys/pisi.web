@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.ServiceModel;
+using Pisi.MasterData.Contract;
 
 namespace PisiWeb.Controllers
 {
@@ -11,9 +13,16 @@ namespace PisiWeb.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            //ViewBag.Message = "PISI Web Edition";
+            var cf = new ChannelFactory<IPayslipChannel>("payslip");
+            IList<PayrollPeriod> result = new List<PayrollPeriod>();
+            
+            using (var ch = cf.CreateChannel())
+            {
+                //int test = ch.AddNumbers(3, 4);
+                result = ch.FindAllPublishedPeriod();
+            }
 
-            return View();
+            return View(result);
         }
 
         public ActionResult About()

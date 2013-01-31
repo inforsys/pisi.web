@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Pisi.MasterData.CloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="2" osVersion="*" schemaVersion="2012-10.1.8">
+  <Role name="Pisi.MasterData.WorkerRole1">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=pisiservice1;AccountKey=V/TZPqvz8MIGkS96NsCgzZCpR9XvHpaJYOVJlIHIauPRaK+t5d6/Sz63TrN2paPwdtAxElIYYH6wcSWm/LbY/w==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="pisiadmin" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEDLeVqb2kt6TQRyK11Z6ZMEwDQYJKoZIhvcNAQEBBQAEggEABXevHFpS0Zv8+7DrDHwilYjrZysZvkemY84TVT2r0tsjSVTeay77GHW2cUfAOkika9JX3gmGgVSozsXoRjfPhwzrgSRH/0ht8u+k+ZCqgqmAy5kCCYfxRBtX+m/uiGdeBDfgjuVxuIkaN03WqN/Ch3QDBXkKKzC+LulxpfF/vXbfSrIl3qp5Oo4oN2nH9RXoEdPR1Aq910hnjfYMNtdboGUm9GC5puwL7Qfc5oxr854ORdaJzMeX4BsTEHU9AWmqAqaGcCzMpLgUJYDTXDZp6czmXqg0Q2GbC18PnAkVggbSvkRokbISO9f/JbC+DFUIxj+AgDxpg8t2ECMVWlsArTAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECI5skXIo3na0gBAqRqhM7/HjR2/Ra32aVHF4" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2014-02-01T23:59:59.0000000+07:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="335A0D8B8DC05EF551EBD4EBC3EC44CDB91A8EE9" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>
