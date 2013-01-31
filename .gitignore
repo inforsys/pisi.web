@@ -4,6 +4,7 @@ bin
 obj
 debug
 release
+TestResults
 *.user
 build
 *.cache
