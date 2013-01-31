@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ServiceModel;
-using Pisi.MasterData.Services;
+using Pisi.Services;
+
+
 
 namespace ExposeToRelayConsole
 {
@@ -11,7 +13,7 @@ namespace ExposeToRelayConsole
     {
         static void Main(string[] args)
         {
-            ServiceHost sh = new ServiceHost(typeof(PayrollServices));
+            ServiceHost sh = new ServiceHost(typeof(PisiServices));
             sh.Open();
             //ServiceHost sh2 = new ServiceHost(typeof(Payslip));
             //sh2.Open();
