@@ -1,0 +1,8 @@
+﻿ul.payslip-period-list 
+{
+    list-style-type: none;
+}
+div.span3.payslip-period-box
+{
+    border-right: 1px solid black;
+}
