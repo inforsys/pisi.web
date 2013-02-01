@@ -1,4 +1,4 @@
-﻿@model IList<Pisi.MasterData.Contract.PayrollPeriod>
+﻿@model IList<Pisi.Payslip.Contract.PayslipPeriod>
 @{
     ViewBag.Title = "PAYSLIP";
 }
@@ -18,32 +18,25 @@
     body {
         padding-top: 0; /* 60px to make the container go all the way to the bottom of the topbar */
     }
-    ul.payslip-period-list 
-    {
-        list-style-type: none;
-    }
-    div.span3.payslip-period-box
-    {
-        border-right: 1px solid black;
-    }
     </style>
     <link rel="Stylesheet" href="@Url.Content("~/Content/bootstrap-responsive.min.css")">
+    <!--<link rel="Stylesheet" href="@Url.Content("~/Content/pisi.css")">-->
 }
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span3 payslip-period-box">
-            <p>
-                <label>To preview payslip select period</label>
-                <ul class="payslip-period-list">
-                @foreach (Pisi.MasterData.Contract.PayrollPeriod payPrd in Model)
-                {
-                    <li><a href="#" id="@payPrd.Code" class="payslip-period-item">@payPrd.Name</a></li>
-                }
+            <div class="well" style="max-width: 340px; padding: 8px 0;">
+                <ul class="nav nav-list">
+                    <li class="nav-header">To preview payslip select period</li>
+                    @foreach (Pisi.Payslip.Contract.PayslipPeriod payPrd in Model)
+                    {
+                        <li class="payslip-period-item" id="@payPrd.Code"><a href="#" id="@payPrd.Code">@payPrd.Name</a></li>
+                    }
                 </ul>
-            </p>
+            </div>
         </div>
-        <div class="span9 payslip-view">
-            
+        <div class="span9">
+            <div class="well payslip-view" id="payslip-view"/>
         </div>
     </div>
 </div>
@@ -52,14 +45,5 @@
     <script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/underscore.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/backbone.min.js")"></script>
-    <script type="text/javascript">
-    function showPayslip(e){
-        $("div.span9.payslip-view").empty();
-        $("div.span9.payslip-view").append("<h3>Your payslip period " + $(e.target).text() + "</h3>");
-    }
-
-    $(function(){
-        $('a.payslip-period-item').click(showPayslip);
-    });
-    </script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/payslip.js")"></script>
 }

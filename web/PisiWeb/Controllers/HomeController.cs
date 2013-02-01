@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.ServiceModel;
 using Pisi.MasterData.Contract;
+using Pisi.Payslip.Contract;
+using PisiWeb.Models;
 
 namespace PisiWeb.Controllers
 {
@@ -13,16 +15,24 @@ namespace PisiWeb.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var cf = new ChannelFactory<IPayslipChannel>("payslip");
-            IList<PayrollPeriod> result = new List<PayrollPeriod>();
-            
-            using (var ch = cf.CreateChannel())
+            try
             {
-                //int test = ch.AddNumbers(3, 4);
-                result = ch.FindAllPublishedPeriod();
-            }
+                var cf = new ChannelFactory<IPayslipChannel>("payslip");
+                IList<PayslipPeriod> result = new List<PayslipPeriod>();
 
-            return View(result);
+                UserProfile userProfile = new UsersContext().UserProfiles.Where(u => u.UserName == this.User.Identity.Name).FirstOrDefault();
+
+                using (var ch = cf.CreateChannel())
+                {
+                    result = ch.FindAllPublishedPeriodForEmployee(userProfile.EmployeeId);
+                }
+
+                return View(result);
+            }
+            catch (Exception ex)
+            {
+                return View(new List<PayslipPeriod>());
+            }
         }
 
         public ActionResult About()

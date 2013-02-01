@@ -27,7 +27,7 @@ namespace PisiWeb
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
 
-            Database.SetInitializer<UsersContext>(new SecurityDBInitializer());
+            //Database.SetInitializer<UsersContext>(new SecurityDBInitializer());
             
         }
     }

@@ -14,7 +14,7 @@ namespace PisiWeb.Controllers
         // GET api/staticdata
         public IList<PayrollPeriod> Get()
         {
-            var cf = new ChannelFactory<IPeriodChannel>("payslip");
+            var cf = new ChannelFactory<IPeriodChannel>("period");
             using (var ch = cf.CreateChannel())
             {
                 //int test = ch.AddNumbers(3, 4);

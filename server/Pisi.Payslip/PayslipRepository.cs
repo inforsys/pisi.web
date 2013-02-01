@@ -102,7 +102,7 @@ namespace Pisi.Payslip
                            select new PayslipPeriod() { Code = m.MonthID , Name = m.monName };
 
 
-                return query.OrderBy(x=>x.Code).ToList();
+                return query.OrderByDescending(x=>x.Code).ToList();
             }
         }
         public Payroll LoadPayrollForEmployee(string employeeid, string periodid)

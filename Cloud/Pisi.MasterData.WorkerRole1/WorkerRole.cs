@@ -9,7 +9,7 @@ using Microsoft.WindowsAzure.Diagnostics;
 using Microsoft.WindowsAzure.ServiceRuntime;
 using Microsoft.WindowsAzure.StorageClient;
 using System.ServiceModel;
-using Pisi.MasterData.Services;
+using Pisi.Services;
 namespace Pisi.MasterData.WorkerRole1
 {
     public class WorkerRole : RoleEntryPoint
@@ -20,8 +20,8 @@ namespace Pisi.MasterData.WorkerRole1
             // This is a sample worker implementation. Replace with your logic.
             Trace.WriteLine("Pisi.MasterData.WorkerRole1 entry point called", "Information");
 
-            serviceHost = new ServiceHost(typeof(PayrollServices));
-            serviceHost.Open();
+            //serviceHost = new ServiceHost(typeof(PisiServices));
+            //serviceHost.Open();
 
             while (true)
             {

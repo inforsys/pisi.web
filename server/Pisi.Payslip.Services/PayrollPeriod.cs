@@ -12,15 +12,16 @@ namespace Pisi.Services
     {
         public IList<PayrollPeriod> FindAllPublishedPeriod()
         {
-            return new List<PayrollPeriod> { 
-                new PayrollPeriod{
-                    Code = "201301",
-                    Name = "Januari 2013"
-                }
-            };
-
-            //PeriodRepository repo = new PeriodRepository();
-            //return repo.LoadAllPeriod();
+            try
+            {
+                PeriodRepository repo = new PeriodRepository();
+                return repo.LoadAllPeriod();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new List<PayrollPeriod>();
+            }
         }
     }
 }

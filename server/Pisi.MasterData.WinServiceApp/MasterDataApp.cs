@@ -7,7 +7,7 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.ServiceModel;
-using Pisi.MasterData.Services;
+using Pisi.Services;
 
 namespace Pisi.MasterData.WinServiceApp
 {
@@ -22,7 +22,7 @@ namespace Pisi.MasterData.WinServiceApp
 
         protected override void OnStart(string[] args)
         {
-            serviceHost = new ServiceHost(typeof(PayrollServices));
+            serviceHost = new ServiceHost(typeof(PisiServices));
             serviceHost.Open();
         }
 

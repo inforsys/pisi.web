@@ -7,7 +7,7 @@ using System.ServiceModel;
 namespace Pisi.Payslip.Contract
 {
 
-        [ServiceContract(Namespace = "https://pisi.web/service/payslip/0/0/1")]
+        [ServiceContract(Namespace = "urn:ps")]
         public interface IPayslipService
         {
             [OperationContract]
